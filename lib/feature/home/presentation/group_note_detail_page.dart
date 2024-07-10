@@ -117,10 +117,9 @@ class _GroupNoteDetailPageState extends BasePageState<GroupNoteDetailPage> {
   @override
   Widget? buildFloatingActionButton(BuildContext context) {
     return GestureDetector(
-      // onPressed: () {
-      //   addNewNote();
-      // },
-
+      onTap: () {
+        addNewNote();
+      },
       child: Container(
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
