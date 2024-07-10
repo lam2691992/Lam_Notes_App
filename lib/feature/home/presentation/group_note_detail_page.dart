@@ -50,10 +50,6 @@ class _GroupNoteDetailPageState extends BasePageState<GroupNoteDetailPage> {
           builder: (context, state) {
             return Row(
               children: [
-                Icon(
-                  Icons.delete,
-                  color: state ? null : Theme.of(context).disabledColor,
-                ),
                 Transform.scale(
                   scale: 0.8,
                   child: Switch(
@@ -82,6 +78,7 @@ class _GroupNoteDetailPageState extends BasePageState<GroupNoteDetailPage> {
           selector: (state) => state.notes?.reversed.toList(),
           builder: (context, notes) {
             if (!notes.isNotNullAndNotEmpty) {
+              return const SizedBox();
               return GestureDetector(
                 onTap: () {
                   addNewNote();
@@ -119,11 +116,29 @@ class _GroupNoteDetailPageState extends BasePageState<GroupNoteDetailPage> {
 
   @override
   Widget? buildFloatingActionButton(BuildContext context) {
-    return FloatingActionButton(
-      onPressed: () {
-        addNewNote();
-      },
-      child: Icon(Icons.add),
+    return GestureDetector(
+      // onPressed: () {
+      //   addNewNote();
+      // },
+
+      child: Container(
+        padding: EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Color(0xFFeaddff),
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.add),
+            FittedBox(
+                child: Text(
+              'Add Note',
+              style: Theme.of(context).textTheme.labelSmall,
+            )),
+          ],
+        ),
+      ),
     );
   }
 

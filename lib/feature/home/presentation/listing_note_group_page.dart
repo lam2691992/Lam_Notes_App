@@ -21,10 +21,6 @@ class _ListingNoteGroupPageState extends BasePageState<ListingNoteGroupPage> {
       actions: [
         Row(
           children: [
-            Icon(
-              Icons.delete,
-              color: isShowDeleteMode ? null : Theme.of(context).disabledColor,
-            ),
             Transform.scale(
               scale: 0.8,
               child: Switch(

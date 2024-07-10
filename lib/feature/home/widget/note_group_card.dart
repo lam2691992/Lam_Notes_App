@@ -46,12 +46,14 @@ class _NoteGroupCardState extends State<NoteGroupCard> {
               builder: (context, notes) {
                 if (!notes.isNotNullAndNotEmpty) {
                   return Center(
-                    child: Text(
-                      (widget.group.name ?? ''),
-                      maxLines: 2,
-                      textAlign: TextAlign.center,
-                      overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.displaySmall,
+                    child: FittedBox(
+                      child: Text(
+                        (widget.group.name ?? '').get9Character(),
+                        maxLines: 1,
+                        textAlign: TextAlign.center,
+                        overflow: TextOverflow.ellipsis,
+                        style: theme.textTheme.displaySmall,
+                      ),
                     ),
                   );
                 }
@@ -88,5 +90,15 @@ class _NoteGroupCardState extends State<NoteGroupCard> {
         ),
       ),
     );
+  }
+}
+
+extension Get9Character on String {
+  String get9Character() {
+    if (length <= 9) {
+      return this;
+    }
+
+    return '${substring(0, 9)}...';
   }
 }
