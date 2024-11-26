@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/data/entity/note_entity.dart';
 import 'package:note_app/feature/home/bloc/group_bloc.dart';
 import 'package:note_app/feature/home/presentation/add_group_note_page.dart';
-
 import 'package:note_app/feature/home/widget/note_group_card.dart';
 import 'package:note_app/feature/home/widget/note_group_list_widget.dart';
 

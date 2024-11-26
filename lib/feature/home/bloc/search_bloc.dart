@@ -7,7 +7,7 @@ import 'package:note_app/data/repository/search_repository.dart';
 import 'package:rxdart/rxdart.dart';
 
 class SearchBloc extends Cubit<SearchState> {
-  SearchBloc() : super(SearchState()) {
+  SearchBloc() : super(const SearchState()) {
     _streamSubscription =
         stream.map((event) => event.searchInput?.trim()).debounceTime(const Duration(microseconds: 500)).listen(
       (searchInput) {

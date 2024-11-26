@@ -9,7 +9,7 @@ abstract class BuildBasePage {
 }
 
 abstract class BasePage extends StatelessWidget implements BuildBasePage {
-  const BasePage({Key? key}) : super(key: key);
+  const BasePage({super.key});
 
   @override
   Widget build(BuildContext context) {

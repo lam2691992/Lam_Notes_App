@@ -1,14 +1,9 @@
 import 'dart:async';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:isar/isar.dart';
 import 'package:note_app/base_presentation/theme/theme.dart';
-import 'package:note_app/data/collection/note_collection.dart';
-import 'package:note_app/data/entity/collection_mapping.dart';
 import 'package:note_app/data/entity/note_entity.dart';
-import 'package:note_app/data/observer_data.dart';
 import 'package:note_app/data/observer_data/note_observer_data.dart';
 import 'package:note_app/data/observer_data/note_observer_data_impl.dart';
 import 'package:note_app/data/repository/note_repository_impl.dart';
@@ -19,9 +14,6 @@ import 'package:note_app/feature/home/bloc/group_bloc.dart';
 import 'package:note_app/util/app_life_cycle_mixin.dart';
 import 'package:note_app/util/navigator/app_navigator.dart';
 import 'package:note_app/util/navigator/app_page.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:rxdart/rxdart.dart';
-
 import 'main_setting/app_setting.dart';
 
 class AppLocale {
@@ -149,7 +141,7 @@ class _HomeTestDatabaseState extends State<HomeTestDatabase> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const Text('Notes'),),
       body: Column(
         children: [
           Text(g.map((e) => e.name ?? '').join('\n')),

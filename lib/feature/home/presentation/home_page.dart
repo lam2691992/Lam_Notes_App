@@ -35,26 +35,26 @@ class _HomePageState extends BasePageState<HomePage> {
   }
 
   Widget _buildSearchBar() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       child: SearchView(),
     );
   }
 
   Widget _buildNoteGroupList() {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const NoteGroupListWidget(),
+        NoteGroupListWidget(),
       ],
     );
   }
 
   Widget _buildListGroupCard() {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Expanded(child: const GroupNoteCardList()),
+        Expanded(child: GroupNoteCardList()),
       ],
     );
   }

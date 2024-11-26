@@ -39,9 +39,11 @@ class _NoteGroupCardState extends State<NoteGroupCard> {
           AppNavigator.to(GetGroupNoteDetailPage(), widget.group);
         },
         child: Card(
+          color: Colors.lightBlueAccent,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: BlocSelector<GroupDetailBloc, GroupDetailState, List<NoteEntity>?>(
+            child: BlocSelector<GroupDetailBloc, GroupDetailState,
+                List<NoteEntity>?>(
               selector: (state) => state.notes,
               builder: (context, notes) {
                 if (!notes.isNotNullAndNotEmpty) {
@@ -75,10 +77,17 @@ class _NoteGroupCardState extends State<NoteGroupCard> {
 
                           return Text(
                             item.description ?? '',
-                            style: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
+                            style: theme.textTheme.bodyLarge
+                                ?.copyWith(color: theme.hintColor),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           );
                         },
-                        separatorBuilder: (context, index) => const SizedBox(height: 4),
+                        separatorBuilder: (context, index) => const Divider(
+                          color: Colors.grey,
+                          thickness: 0.5,
+                          height: 8,
+                        ),
                         itemCount: notes!.length,
                       ),
                     ),

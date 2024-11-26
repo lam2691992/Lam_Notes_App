@@ -2,7 +2,6 @@ import 'package:isar/isar.dart';
 import 'package:note_app/data/collection/note_collection.dart';
 import 'package:note_app/data/entity/collection_mapping.dart';
 import 'package:note_app/data/entity/note_entity.dart';
-import 'package:note_app/data/observer_data.dart';
 import 'package:note_app/data/observer_data/note_observer_data.dart';
 import 'package:rxdart/rxdart.dart';
 
