@@ -54,7 +54,8 @@ class _AddNoteGroupWidgetState extends State<AddNoteGroupWidget> {
             Positioned(
               right: 0,
               top: 0,
-              child: BlocSelector<ListNoteGroupCubit, ListNoteGroupState, List<NoteGroupEntity>?>(
+              child: BlocSelector<ListNoteGroupCubit, ListNoteGroupState,
+                  List<NoteGroupEntity>?>(
                 selector: (state) => state.groups,
                 builder: (context, groups) {
                   if (groups?.isEmpty ?? true) {
@@ -67,7 +68,7 @@ class _AddNoteGroupWidgetState extends State<AddNoteGroupWidget> {
                     },
                     icon: const Row(
                       children: [
-                        Text('View all'),
+                        Text('View All Note'),
                         Icon(Icons.navigate_next),
                       ],
                     ),
@@ -96,14 +97,17 @@ class _NoteGroupListWidgetState extends State<NoteGroupListWidget> {
       child: Row(
         children: [
           Expanded(
-            child: BlocSelector<ListNoteGroupCubit, ListNoteGroupState, List<NoteGroupEntity>?>(
+            child: BlocSelector<ListNoteGroupCubit, ListNoteGroupState,
+                List<NoteGroupEntity>?>(
               selector: (state) => state.groups,
               builder: (context, groups) {
                 if (groups?.isEmpty ?? true) {
                   return Container(
                     margin: const EdgeInsets.all(16),
                     padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(border: Border.all(), borderRadius: BorderRadius.circular(8)),
+                    decoration: BoxDecoration(
+                        border: Border.all(),
+                        borderRadius: BorderRadius.circular(8)),
                     child: const Row(
                       children: [
                         Icon(
@@ -124,7 +128,8 @@ class _NoteGroupListWidgetState extends State<NoteGroupListWidget> {
                     return Chip(label: Text(groups![index].name ?? ''));
                   },
                   itemCount: groups?.length ?? 0,
-                  separatorBuilder: (context, index) => const SizedBox(width: 8),
+                  separatorBuilder: (context, index) =>
+                      const SizedBox(width: 8),
                 );
               },
             ),

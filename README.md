@@ -1,26 +1,39 @@
 # note_app
 
-A new Flutter project.
+A new Flutter project - Note App.
 
-## Getting Started
+Xin chào, tôi là Nguyễn Văn Lâm, một người mới bắt đầu học lập trình.
+ Đây là dự án Flutter đầu tiên của tôi,
+được xây dựng sau khi tham gia khóa học Flutter tại Techmaster.
 
-Xin chào, tôi là Nguyễn Văn Lâm - một người chưa biết gì về lập trình.
-Và đây là dự án Flutter đầu tiên của tôi sau khi theo học khóa Flutter tại Techmaster.
-Dự án có tên Note App, dùng để ghi nhớ những kế hoạch,
-công việc cần làm trong tương lai.
-Note App có những chức năng: 
-- Tạo bảng để thêm mới, sửa, xóa... ghi chú,
-- Đánh dấu ngày tháng cho ghi chú,
-- Đánh dấu ghi chú đã được thực hiện,
-- Chia sẻ ghi chú cho các nền tảng bên ngoài khác,
-...
-Dự án được triển khai:
-- Observable để lắng nghe sự thay đổi của dữ liệu,
-- Dữ liệu được chia thành các tầng:
-+ Data - collection đại diện cho thông tin lưu trữ database('ISAR'),
-+ Entity - các Model được sử dụng để thực hiện việc show data và logic,
-+ Repository có vai trò quản lý việc đọc, ghi dữ liệu database presentation,
-+ Bloc dùng để quản lý trạng thái màn hình và các logic của App...
+ Note App là một ứng dụng ghi chú giúp người dùng quản lý các kế hoạch, 
+công việc đã hoàn thành hoặc cần làm trong tương lai.
+ Ứng dụng cho phép người dùng dễ dàng tạo, sửa đổi và xóa ghi chú, 
+ cũng như theo dõi tiến độ công việc...
+
+Tính năng
++ Tạo, sửa, xóa ghi chú: Người dùng có thêm, chỉnh sửa hoặc xóa ghi chú.
++ Đính kèm các file thông tin bổ sung cho ghi chú(ảnh, video...).
++ Đánh dấu ngày tháng: Ghi chú có thể được gán ngày tháng để theo dõi.
++ Đánh dấu ghi chú đã thực hiện: Người dùng có thể đánh dấu ghi chú đã hoàn thành.
++ Chia sẻ ghi chú: Ghi chú có thể được chia sẻ với các nền tảng bên ngoài khác...
+
+ - Kiến trúc dự án
+ Dự án được triển khai với các thành phần sau:
++ Observable: Lắng nghe sự thay đổi của dữ liệu.
++ Data Layer: Chứa các collection đại diện cho thông tin lưu trữ trong cơ sở dữ liệu (ISAR).
++ Entity Layer: Chứa các model được sử dụng để hiển thị dữ liệu và thực hiện logic.
++ Repository Layer: Quản lý việc đọc và ghi dữ liệu từ cơ sở dữ liệu...
+
+ - Công nghệ sử dụng
+ + Dart
+ + Flutter
+ + Bloc
+ + Isar
+ + Share_plus
+ + Build runner...
+  Dự án sử dụng BLOC để quản lý trạng thái màn hình và logic của ứng dụng.
+
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
