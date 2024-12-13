@@ -30,9 +30,9 @@ Tính năng
  + Build runner...
 
   Dự án sử dụng BLOC để quản lý trạng thái màn hình và logic của ứng dụng.
+  Flutter 3.22.0, Dart 3.4.0
 
 # App Screenshots
-
 | ![Home screen](./assets/docs/app_screenshots/home_screen.jpg) | ![Add new note group screen](./assets/docs/app_screenshots/addNewNoteGroup_screen.jpg) |
 |---------------------------------------------------------------|-------------------------------------------------------------------|
 | Home screen                                                  | Add new note group screen                                         |
@@ -45,6 +45,7 @@ Tính năng
 |-----------------------------------------------------------------|-------------------------------------------------------------------|
 | Search screen                                                  |                                                                   |
 
+- Slide: https://docs.google.com/presentation/d/15SMkAB5jKj1w0JyNo4jbtxgtPxKnJnEE/edit#slide=id.p1
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
