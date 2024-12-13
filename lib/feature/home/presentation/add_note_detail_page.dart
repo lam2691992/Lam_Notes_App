@@ -177,7 +177,7 @@ class _AddNoteDetailPageState extends BasePageState<AddNoteDetailPage> with Them
   void onSave() {
     if (isEditView) {
       Navigator.of(context).pop(
-        initNote.copyWith(
+        initNote.copyWith2(
           groupId: group?.id,
           description: _controller.text.trim(),
           date: date,

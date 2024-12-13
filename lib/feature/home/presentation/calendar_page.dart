@@ -1,13 +1,14 @@
-import 'dart:collection';
-
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/base_presentation/page/base_page.dart';
 import 'package:note_app/data/entity/note_entity.dart';
 import 'package:note_app/data/observer_data/note_observer_data.dart';
 import 'package:note_app/data/observer_data/note_observer_data_impl.dart';
 import 'package:note_app/feature/home/widget/note_check_widget.dart';
 import 'package:table_calendar/table_calendar.dart';
+
+import '../bloc/crud_note_bloc.dart';
+import 'add_note_detail_page.dart';
 
 extension DateString on DateTime {
   String dateString() => toString().split(' ').first;
@@ -121,8 +122,19 @@ class _NoteListByDateState extends State<_NoteListByDate> {
     return ListView.separated(
       itemBuilder: (context, index) {
         return NoteCard(
-          note: notes[index],
-        );
+            note: notes[index],
+            onTap: () {
+              AddNoteDetailPage(
+                initNote: notes[index],
+                // initNoteGroup: widget.group,
+              ).showBottomSheet(context).then(
+                (note) {
+                  if (note != null) {
+                    context.read<CrudNoteBloc>().update(note);
+                  }
+                },
+              );
+            });
       },
       separatorBuilder: (context, index) => const Divider(height: 0),
       itemCount: notes.length,

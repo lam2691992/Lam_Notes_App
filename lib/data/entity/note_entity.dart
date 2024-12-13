@@ -86,6 +86,28 @@ class NoteEntity extends Equatable implements GetId<int> {
       attachments: attachments ?? this.attachments,
     );
   }
+
+  NoteEntity copyWith2({
+    int? id,
+    int? groupId,
+    String? description,
+    bool? isDone,
+    bool? isDeleted,
+    DateTime? date,
+    DateTime? updatedDateTime,
+    List<AttachmentEntity>? attachments,
+  }) {
+    return NoteEntity(
+      id: id ?? this.id,
+      groupId: groupId ?? this.groupId,
+      description: description ?? this.description,
+      isDone: isDone ?? this.isDone,
+      isDeleted: isDeleted ?? this.isDeleted,
+      date: date,
+      updatedDateTime: updatedDateTime ?? this.updatedDateTime,
+      attachments: attachments ?? this.attachments,
+    );
+  }
 }
 
 //Lưu thông tin đính kèm

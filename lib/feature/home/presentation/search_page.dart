@@ -5,6 +5,9 @@ import 'package:note_app/data/entity/note_entity.dart';
 import 'package:note_app/feature/home/bloc/search_bloc.dart';
 import 'package:note_app/feature/home/widget/note_check_widget.dart';
 
+import '../bloc/crud_note_bloc.dart';
+import 'add_note_detail_page.dart';
+
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
 
@@ -112,6 +115,18 @@ class _SearchPageState extends BasePageState<SearchPage> {
                       showGroup: true,
                       showDelete: false,
                       showCheckDone: false,
+                      onTap: () {
+                        AddNoteDetailPage(
+                          initNote: note,
+                          // initNoteGroup: widget.group,
+                        ).showBottomSheet(context).then(
+                          (note) {
+                            if (note != null) {
+                              context.read<CrudNoteBloc>().update(note);
+                            }
+                          },
+                        );
+                      },
                     );
                   },
                   separatorBuilder: (context, index) => const Divider(),
