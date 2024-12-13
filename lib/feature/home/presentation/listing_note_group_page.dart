@@ -4,6 +4,10 @@ import 'package:note_app/base_presentation/page/base_page.dart';
 import 'package:note_app/feature/home/bloc/group_bloc.dart';
 import 'package:note_app/util/list_util.dart';
 
+import '../../../util/navigator/app_navigator.dart';
+import '../../../util/navigator/app_page.dart';
+import '../../../widget/confirm_dialog.dart';
+
 class ListingNoteGroupPage extends StatefulWidget {
   const ListingNoteGroupPage({super.key});
 
@@ -49,12 +53,19 @@ class _ListingNoteGroupPageState extends BasePageState<ListingNoteGroupPage> {
           itemBuilder: (context, index) {
             final group = groups[index];
             return ListTile(
+              onTap: () {
+                AppNavigator.to(GetGroupNoteDetailPage(), group);
+              },
               title: Text(group.name ?? ''),
               trailing: !isShowDeleteMode
                   ? null
                   : IconButton(
                       onPressed: () {
-                        context.read<ListNoteGroupCubit>().delete(group);
+                        DeleteConfirmDialog(
+                          onConfirm: () {
+                            context.read<ListNoteGroupCubit>().delete(group);
+                          },
+                        ).show(context);
                       },
                       icon: Icon(Icons.delete),
                     ),

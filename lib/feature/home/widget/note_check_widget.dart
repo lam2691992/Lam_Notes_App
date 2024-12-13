@@ -7,6 +7,10 @@ import 'package:note_app/feature/home/presentation/calendar_page.dart';
 import 'package:note_app/util/list_util.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../../../util/navigator/app_navigator.dart';
+import '../../../util/navigator/app_page.dart';
+import '../../../widget/confirm_dialog.dart';
+
 class NoteCheckWidget extends StatelessWidget {
   const NoteCheckWidget({
     super.key,
@@ -106,9 +110,14 @@ class NoteCard extends StatelessWidget {
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   if (snapshot.data?.name != null) {
-                    return Chip(
-                      label: Text('${snapshot.data!.name}'),
-                      padding: const EdgeInsets.all(4),
+                    return InkWell(
+                      onTap: () {
+                        AppNavigator.to(GetGroupNoteDetailPage(), snapshot.data);
+                      },
+                      child: Chip(
+                        label: Text('${snapshot.data!.name}'),
+                        padding: const EdgeInsets.all(4),
+                      ),
                     );
                   }
                 }
@@ -166,7 +175,11 @@ class NoteCard extends StatelessWidget {
                   IconButton(
                     icon: const Icon(Icons.delete),
                     onPressed: () {
-                      context.read<CrudNoteBloc>().delete(note);
+                      DeleteConfirmDialog(
+                        onConfirm: () {
+                          context.read<CrudNoteBloc>().delete(note);
+                        },
+                      ).show(context);
                     },
                   )
               ],
