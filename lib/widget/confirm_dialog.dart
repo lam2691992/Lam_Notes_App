@@ -23,7 +23,8 @@ mixin ShowDialog<T> on Widget {
 }
 
 class ConfirmDialog extends StatelessWidget with ShowDialog<dynamic> {
-  const ConfirmDialog({super.key, required this.title, this.description, this.onConfirm});
+  const ConfirmDialog(
+      {super.key, required this.title, this.description, this.onConfirm});
 
   final String title;
   final String? description;
@@ -40,6 +41,10 @@ class ConfirmDialog extends StatelessWidget with ShowDialog<dynamic> {
           onPressed: () {
             Navigator.of(context).pop();
           },
+          style: TextButton.styleFrom(
+            foregroundColor: Colors.red, // Màu chữ
+            textStyle: const TextStyle(fontWeight: FontWeight.bold), // Kiểu chữ
+          ),
           child: const Text('Cancel'),
         ),
         TextButton(
@@ -47,6 +52,13 @@ class ConfirmDialog extends StatelessWidget with ShowDialog<dynamic> {
             onConfirm?.call();
             Navigator.of(context).pop();
           },
+          style: TextButton.styleFrom(
+            backgroundColor: Colors.blue, // Màu nền
+            foregroundColor: Colors.white, // Màu chữ
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8), // Bo góc
+            ),
+          ),
           child: const Text('OK'),
         ),
       ],
