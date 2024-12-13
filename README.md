@@ -45,7 +45,7 @@ Tính năng
 |-----------------------------------------------------------------|-------------------------------------------------------------------|
 | Search screen                                                  |                                                                   |
 
-- Slide: https://docs.google.com/presentation/d/15SMkAB5jKj1w0JyNo4jbtxgtPxKnJnEE/edit#slide=id.p1
+- Slide: https://docs.google.com/presentation/d/1UQH2oePm9aSSybGuD__vZqEZ8UZdSwFp/edit#slide=id.p1
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
