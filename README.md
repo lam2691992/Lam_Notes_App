@@ -34,12 +34,20 @@ Tính năng
  + Build runner...
   Dự án sử dụng BLOC để quản lý trạng thái màn hình và logic của ứng dụng.
 
-   App Screenshots:
-- ![Home screen](./assets/docs/app_screenshots/home_screen.jpg)
-- ![Add new note group screen](./assets/docs/app_screenshots/addNewNoteGroup_screen.jpg)
-- ![Calendar screen](./assets/docs/app_screenshots/calendar_screen.jpg)
-- ![Delete and undo screen](./assets/docs/app_screenshots/deleteAndUndo_screen.jpg)
-- ![Search screen](./assets/docs/app_screenshots/search_screen.jpg)
+# App Screenshots
+
+| ![Home screen](./assets/docs/app_screenshots/home_screen.jpg) | ![Add new note group screen](./assets/docs/app_screenshots/addNewNoteGroup_screen.jpg) |
+|---------------------------------------------------------------|-------------------------------------------------------------------|
+| Home screen                                                  | Add new note group screen                                         |
+
+| ![Calendar screen](./assets/docs/app_screenshots/calendar_screen.jpg) | ![Delete and undo screen](./assets/docs/app_screenshots/deleteAndUndo_screen.jpg) |
+|----------------------------------------------------------------------|--------------------------------------------------------------------|
+| Calendar screen                                                     | Delete and undo screen                                             |
+
+| ![Search screen](./assets/docs/app_screenshots/search_screen.jpg) | |
+|-----------------------------------------------------------------|-------------------------------------------------------------------|
+| Search screen                                                  |                                                                   |
+
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
