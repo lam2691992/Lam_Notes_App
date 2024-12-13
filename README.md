@@ -2,14 +2,10 @@
 
 A new Flutter project - Note App.
 
-Xin chào, tôi là Nguyễn Văn Lâm, một người mới bắt đầu học lập trình.
- Đây là dự án Flutter đầu tiên của tôi,
-được xây dựng sau khi tham gia khóa học Flutter tại Techmaster.
+Xin chào, tôi là Nguyễn Văn Lâm, một người mới bắt đầu học lập trình. Đây là dự án Flutter đầu tiên của tôi, được xây dựng sau khi tham gia khóa học Flutter tại Techmaster.
 
- Note App là một ứng dụng ghi chú giúp người dùng quản lý các kế hoạch, 
-công việc đã hoàn thành hoặc cần làm trong tương lai.
- Ứng dụng cho phép người dùng dễ dàng tạo, sửa đổi và xóa ghi chú, 
- cũng như theo dõi tiến độ công việc...
+ Note App là một ứng dụng ghi chú giúp người dùng quản lý các kế hoạch, công việc đã hoàn thành hoặc cần làm trong tương lai.
+ Ứng dụng cho phép người dùng dễ dàng tạo, sửa đổi và xóa ghi chú, cũng như theo dõi tiến độ công việc...
 
 Tính năng
 + Tạo, sửa, xóa ghi chú: Người dùng có thêm, chỉnh sửa hoặc xóa ghi chú.
@@ -32,6 +28,7 @@ Tính năng
  + Isar
  + Share_plus
  + Build runner...
+
   Dự án sử dụng BLOC để quản lý trạng thái màn hình và logic của ứng dụng.
 
 # App Screenshots
