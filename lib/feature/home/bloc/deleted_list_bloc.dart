@@ -23,6 +23,10 @@ class DeletedListBloc extends Cubit<DeletedListState> {
     noteRepository.update(item.copyWith(isDeleted: false));
   }
 
+  void delete(NoteEntity item) {
+    noteRepository.delete(item);
+  }
+
   @override
   Future<void> close() {
     noteObserverData.cancelListen();

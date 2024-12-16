@@ -74,6 +74,12 @@ class _DeletedPageState extends BasePageState<DeletedPage> {
                   },
                   icon: Icon(Icons.restore),
                 ),
+                IconButton(
+                  onPressed: () {
+                    deletedListBloc.delete(item);
+                  },
+                  icon: Icon(Icons.delete),
+                ),
               ],
             );
           },
