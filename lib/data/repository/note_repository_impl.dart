@@ -79,6 +79,8 @@ class NoteGroupRepositoryImpl extends NoteGroupRepository
   @override
   IsarCollection<NoteGroupCollection> get _collection => isar.noteGroupCollections;
 
+  IsarCollection<NoteCollection> get _noteCollection => isar.noteCollections;
+
   @override
   NoteGroupCollection createNewItem(NoteGroupEntity item) {
     return NoteGroupCollection()
@@ -95,6 +97,19 @@ class NoteGroupRepositoryImpl extends NoteGroupRepository
   @override
   NoteGroupCollection updateNewItem(NoteGroupEntity item) {
     return createNewItem(item)..id = item.id!;
+  }
+
+  @override
+  Future<bool> delete(NoteGroupEntity item) async {
+    if (item.getId == null) {
+      throw NotFoundException();
+    }
+
+    await isar.writeTxn(() async {
+      _noteCollection.where().filter().groupIdEqualTo(item.getId!).deleteAll();
+    });
+
+    return super.delete(item);
   }
 }
 
