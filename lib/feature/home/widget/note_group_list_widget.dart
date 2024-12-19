@@ -66,10 +66,17 @@ class _AddNoteGroupWidgetState extends State<AddNoteGroupWidget> {
                     onPressed: () {
                       AppNavigator.to(GetListingNoteGroupPage());
                     },
-                    icon: const Row(
+                    icon: Row(
                       children: [
-                        Text('View All Note'),
-                        Icon(Icons.navigate_next),
+                        Text(
+                          'View All Note',
+                          style: TextStyle(
+                              color: Colors.black, fontWeight: FontWeight.bold),
+                        ),
+                        Icon(
+                          Icons.navigate_next,
+                          color: Colors.black,
+                        ),
                       ],
                     ),
                   );
@@ -112,7 +119,7 @@ class _NoteGroupListWidgetState extends State<NoteGroupListWidget> {
                       children: [
                         Icon(
                           Icons.add,
-                          size: 80,
+                          size: 30,
                         ),
                         SizedBox(width: 16),
                         Text('Add Group')

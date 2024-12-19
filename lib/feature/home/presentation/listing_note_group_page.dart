@@ -21,7 +21,10 @@ class _ListingNoteGroupPageState extends BasePageState<ListingNoteGroupPage> {
   @override
   PreferredSizeWidget? buildAppBar(BuildContext context) {
     return AppBar(
-      title: const Text('Groups'),
+      title: const Text(
+        'Groups',
+        style: TextStyle(fontWeight: FontWeight.w700, color: Colors.black),
+      ),
       actions: [
         Row(
           children: [
